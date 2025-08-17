@@ -26,3 +26,5 @@ require 'evergarden'.setup {
   overrides = {},
   color_overrides = {},
 }
+
+vim.cmd.colorscheme "evergarden"

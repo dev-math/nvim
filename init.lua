@@ -1,5 +1,3 @@
-vim.cmd.colorscheme "evergarden"
-
 vim.g.mapleader = " "
 vim.diagnostic.config({ virtual_text = true })
 

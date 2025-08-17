@@ -5,6 +5,10 @@ vim.pack.add({
 	"https://github.com/mason-org/mason-lspconfig.nvim",
 	"https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim",
 
+    -- debugger
+    "https://github.com/mfussenegger/nvim-dap",
+    "https://github.com/igorlfs/nvim-dap-view",
+
     -- linter & formatter
     "https://github.com/nvim-lua/plenary.nvim",
     "https://github.com/nvimtools/none-ls.nvim",
