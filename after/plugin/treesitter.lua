@@ -1,9 +1,12 @@
+vim.cmd([[
+    packadd nvim-treesitter-textobjects
+]])
+
 require('ts_context_commentstring').setup {
     enable_autocmd = false,
 }
 
 local get_option = vim.filetype.get_option
----@diagnostic disable-next-line: duplicate-set-field
 vim.filetype.get_option = function(filetype, option)
     return option == "commentstring"
         and require("ts_context_commentstring.internal").calculate_commentstring()
@@ -11,8 +14,6 @@ vim.filetype.get_option = function(filetype, option)
 end
 
 require('nvim-ts-autotag').setup {}
-
-require("nvim-treesitter").setup {}
 require("nvim-treesitter.configs").setup {
     ensure_installed = {
         "bash",
@@ -61,39 +62,7 @@ require("nvim-treesitter.configs").setup {
         },
         highlight_current_scope = { enable = true },
     },
-
     textobjects = {
-        -- syntax-aware textobjects
-        enable = true,
-        lsp_interop = {
-            enable = true,
-            peek_definition_code = {
-                ["DF"] = "@function.outer",
-                ["DF"] = "@class.outer"
-            }
-        },
-        keymaps = {
-            ["iL"] = {
-                -- you can define your own textobjects directly here
-                go = "(function_definition) @function",
-            },
-            -- or you use the queries from supported languages with textobjects.scm
-            ["af"] = "@function.outer",
-            ["if"] = "@function.inner",
-            ["aC"] = "@class.outer",
-            ["iC"] = "@class.inner",
-            ["ac"] = "@conditional.outer",
-            ["ic"] = "@conditional.inner",
-            ["ae"] = "@block.outer",
-            ["ie"] = "@block.inner",
-            ["al"] = "@loop.outer",
-            ["il"] = "@loop.inner",
-            ["is"] = "@statement.inner",
-            ["as"] = "@statement.outer",
-            ["ad"] = "@comment.outer",
-            ["am"] = "@call.outer",
-            ["im"] = "@call.inner"
-        },
         move = {
             enable = true,
             set_jumps = true, -- whether to set jumps in the jumplist
@@ -116,20 +85,23 @@ require("nvim-treesitter.configs").setup {
         },
         select = {
             enable = true,
+            lookahead = true,
             keymaps = {
-                -- You can use the capture groups defined in textobjects.scm
                 ["af"] = "@function.outer",
                 ["if"] = "@function.inner",
-                ["ac"] = "@class.outer",
-                ["ic"] = "@class.inner",
-                -- Or you can define your own textobjects like this
-                ["iF"] = {
-                    python = "(function_definition) @function",
-                    cpp = "(function_definition) @function",
-                    c = "(function_definition) @function",
-                    java = "(method_declaration) @function",
-                    go = "(method_declaration) @function"
-                }
+                ["aC"] = "@class.outer",
+                ["iC"] = "@class.inner",
+                ["ai"] = "@conditional.outer",
+                ["ii"] = "@conditional.inner",
+                ["ae"] = "@block.outer",
+                ["ie"] = "@block.inner",
+                ["al"] = "@loop.outer",
+                ["il"] = "@loop.inner",
+                ["is"] = "@statement.inner",
+                ["as"] = "@statement.outer",
+                ["ad"] = "@comment.outer",
+                ["am"] = "@call.outer",
+                ["im"] = "@call.inner"
             }
         },
         swap = {
@@ -143,3 +115,4 @@ require("nvim-treesitter.configs").setup {
         }
     }
 }
+require("nvim-treesitter").setup {}
