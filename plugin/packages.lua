@@ -8,6 +8,8 @@ vim.pack.add({
     -- debugger
     "https://github.com/mfussenegger/nvim-dap",
     "https://github.com/igorlfs/nvim-dap-view",
+    "https://github.com/theHamsta/nvim-dap-virtual-text",
+    "https://github.com/leoluz/nvim-dap-go",
 
     -- linter & formatter
     "https://github.com/nvim-lua/plenary.nvim",
