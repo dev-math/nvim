@@ -5,6 +5,17 @@ vim.pack.add({
 	"https://github.com/mason-org/mason-lspconfig.nvim",
 	"https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim",
 
+    -- fucking java
+    "https://github.com/nvim-java/nvim-java",
+    "https://github.com/nvim-java/lua-async",
+    "https://github.com/nvim-java/nvim-java-refactor",
+    "https://github.com/nvim-java/nvim-java-core",
+    "https://github.com/nvim-java/nvim-java-test",
+    "https://github.com/nvim-java/nvim-java-dap",
+    "https://github.com/MunifTanjim/nui.nvim",
+    "https://github.com/JavaHello/spring-boot.nvim",
+
+
     -- debugger
     "https://github.com/mfussenegger/nvim-dap",
     "https://github.com/igorlfs/nvim-dap-view",
