@@ -1,6 +1,7 @@
-require('java').setup({
-    handlers = {
-        ["language/status"] = function(_, _) end,
-    },
+require("java").setup({
+	handlers = {
+		["language/status"] = function(_, _) end,
+	},
 })
-require('lspconfig').jdtls.setup({})
+vim.lsp.enable("jdtls")
+-- require('lspconfig').jdtls.setup({})

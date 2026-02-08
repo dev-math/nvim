@@ -5,15 +5,22 @@ vim.pack.add({
 	"https://github.com/mason-org/mason-lspconfig.nvim",
 	"https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim",
 
+	-- devcontainers
+	"https://github.com/miversen33/netman.nvim",
+	"https://github.com/jedrzejboczar/devcontainers.nvim",
+
 	-- fucking java
-	"https://github.com/nvim-java/nvim-java",
-	"https://github.com/nvim-java/lua-async",
-	"https://github.com/nvim-java/nvim-java-refactor",
-	"https://github.com/nvim-java/nvim-java-core",
-	"https://github.com/nvim-java/nvim-java-test",
-	"https://github.com/nvim-java/nvim-java-dap",
-	"https://github.com/MunifTanjim/nui.nvim",
-	"https://github.com/JavaHello/spring-boot.nvim",
+	-- "https://github.com/nvim-java/nvim-java",
+	-- "https://github.com/nvim-java/lua-async",
+	-- "https://github.com/nvim-java/nvim-java-refactor",
+	-- "https://github.com/nvim-java/nvim-java-core",
+	-- "https://github.com/nvim-java/nvim-java-test",
+	-- "https://github.com/nvim-java/nvim-java-dap",
+	-- "https://github.com/MunifTanjim/nui.nvim",
+	-- {
+	-- 	src = "https://github.com/JavaHello/spring-boot.nvim",
+	-- 	version = "218c0c26c14d99feca778e4d13f5ec3e8b1b60f0",
+	-- },
 
 	-- debugger
 	"https://github.com/mfussenegger/nvim-dap",
@@ -57,13 +64,17 @@ vim.pack.add({
 	"https://github.com/mbbill/undotree",
 
 	"https://github.com/Joakker/lua-json5",
+
+	"https://github.com/brianhuster/live-preview.nvim",
+
+	"https://github.com/HakonHarnes/img-clip.nvim",
 })
 
 -- TODO: fix this installation script trigger
 vim.api.nvim_create_autocmd("PackChanged", {
-    pattern = "*",
+	pattern = "*",
 	callback = function(ev)
-        print(vim.inspect(ev))
+		print(vim.inspect(ev))
 		local plugin_name = ev.data.spec.name
 		local change_kind = ev.data.kind
 		local plugin_path = ev.data.spec.path
