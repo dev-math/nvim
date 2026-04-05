@@ -1,6 +1,7 @@
 vim.g.mapleader = " "
 vim.diagnostic.config({ virtual_text = true })
 
+vim.opt.exrc = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.colorcolumn = "100"
